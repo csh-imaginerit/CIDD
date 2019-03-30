@@ -9,6 +9,18 @@ class Home extends Component {
     this.state = {
 
     }
+    this.connection = new WebSocket('ws://127.0.0.1:5000', 'stream');
+    this.connection.onmessage = this.handleOnMessage;
+    this.connection.onopen = this.handleOnOpen;
+  }
+
+  handleOnOpen = () => {
+    console.warn('Connected!');
+    this.connection.send('MY MESSAGE');
+  }
+
+  handleOnMessage(message) {
+      console.warn(message);
   }
 
   renderOptions() {

@@ -1,5 +1,5 @@
 {
-  "name": "Car's Interactive Dashboard Display",
+  "name": "cidd",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
