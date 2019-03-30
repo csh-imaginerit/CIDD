@@ -30,6 +30,9 @@ class App extends Component {
         case 'CHANGE':
           this.protocolChange(tokens[1], tokens);
           break;
+        case 'BACK':
+          this.protocolBack();
+          break;
         default:
       }
   }
@@ -38,6 +41,15 @@ class App extends Component {
     const {stack, update} = this.state;
     if(screen !== stack[stack.length - 1]) {
       stack.push(screen);
+      console.warn(stack);
+      this.setState({update: update + 1});
+    }
+  }
+
+  protocolBack() {
+    const {stack, update} = this.state;
+    if(stack.length > 1) {
+      stack.pop();
       console.warn(stack);
       this.setState({update: update + 1});
     }
