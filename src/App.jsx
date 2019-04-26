@@ -4,12 +4,14 @@ import {
   Home, Information, System, Entertainment, Components, CSH
 } from './pages';
 
+const screens = ['HOME', 'HOME', 'SYSTEM', 'ENTERTAINMENT', 'COMPONENTS', 'CSH']
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selected: 'HOME',
-      hovered: 0
+      hovered: 1
     };
 
     this.handleOnMessage = this.handleOnMessage.bind(this);
@@ -50,7 +52,7 @@ class App extends Component {
   protocolSelect() {
     const {selected, hovered} = this.state;
     if (selected == 'HOME') {
-      this.setState({selected: hovered, hovered: 1});
+      this.setState({selected: screens[hovered], hovered: 1});
     }
   }
 
@@ -79,7 +81,7 @@ class App extends Component {
   }
 
   render() {
-    const {selected} = this.state;
+    const {selected, hovered} = this.state;
     console.warn(this.state);
     switch (selected) {
       case 'ABOUT':
@@ -94,7 +96,7 @@ class App extends Component {
         return <Entertainment />
       case 'HOME':
       default:
-        return <Home protocolChange={this.protocolChange}/>
+        return <Home hovered={hovered}/>
     }
   }
 }

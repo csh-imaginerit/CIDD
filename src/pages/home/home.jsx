@@ -38,9 +38,10 @@ class Home extends Component {
         width: '30%'
       }
     ];
-
+    const {hovered} = this.props;
+  
     return options.map((item, index) =>
-      <OptionBox content={item.id} style={{width: item.width}}>
+      <OptionBox key={index} content={item.id} hovered={item.id === hovered} style={{width: item.width}}>
         <a>{item.name}</a>
       </OptionBox>
     );

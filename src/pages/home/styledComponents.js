@@ -29,6 +29,8 @@ export const OptionBox = styled.div`
     text-decoration: none;
   }
 
+  background-color: ${props => props.hovered ? "red" : "white"};
+
   &:before {
     content: "${props => props.content}";
     color: black;
