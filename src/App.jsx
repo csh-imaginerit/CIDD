@@ -63,7 +63,7 @@ class App extends Component {
         return <Information />
       case 'HOME':
       default:
-        return <Home />
+        return <Home protocolChange={this.protocolChange}/>
     }
   }
 }

@@ -13,21 +13,34 @@ class Home extends Component {
   renderOptions() {
     const options = [
       {
-        name: 'Client site',
-        path: '/client'
+        name: 'About',
+        id: 1,
+        width: '30%'
       },
       {
-        name: 'Transport driver site',
-        path: '/transport'
+        name: 'System',
+        id: 2,
+        width: '50%'
       },
       {
-        name: 'Customer Clerk site',
-        path: '/clerk'
+        name: 'Entertainment',
+        id: 3,
+        width: '80%'
+      },
+      {
+        name: 'Components',
+        id: 4,
+        width: '50%'
+      },
+      {
+        name: 'Computer Science House',
+        id: 5,
+        width: '30%'
       }
     ];
 
     return options.map((item, index) =>
-      <OptionBox>
+      <OptionBox content={item.id} style={{width: item.width}}>
         <a>{item.name}</a>
       </OptionBox>
     );
@@ -37,11 +50,8 @@ class Home extends Component {
     return (
       <Container>
         <Header>
-          Sample project
+          Computerized Autonomous Roadster
         </Header>
-        <Instructions>
-          Choose the portal that fits your use case
-        </Instructions>
         <OptionsContainer>
           {this.renderOptions()}
         </OptionsContainer>

@@ -8,7 +8,6 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
 `;
 
 export const Instructions = styled.h3`
@@ -16,8 +15,9 @@ export const Instructions = styled.h3`
 `;
 
 export const OptionBox = styled.div`
-  padding: 30px;
-  width: 300px;
+  padding: 20px;
+  border: 1px solid black;
+  height: 200px;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -29,6 +29,14 @@ export const OptionBox = styled.div`
     text-decoration: none;
   }
 
+  &:before {
+    content: "${props => props.content}";
+    color: black;
+    left: 10px;
+    top: 10px;
+    position: relative;
+  }
+
   :hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   }
@@ -37,5 +45,6 @@ export const OptionBox = styled.div`
 export const OptionsContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 100vw;
+  flex-wrap: wrap;
 `;
