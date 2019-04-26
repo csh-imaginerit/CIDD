@@ -34,6 +34,11 @@ class App extends Component {
         case 'BACK':
           this.protocolBack();
           break;
+        case 'NEXT':
+          this.protocolNext();
+          break;
+        case 'SELECT':
+          this.protocolSelect();
         default:
       }
   }
@@ -43,30 +48,33 @@ class App extends Component {
   }
 
   protocolSelect() {
-
+    const {selected, hovered} = this.state;
+    if (selected == 'HOME') {
+      this.setState({selected: hovered, hovered: 1});
+    }
   }
 
   protocolNext() {
     const {selected, hovered} = this.state;
-    if (selected != 'HOME') {
-      if(hovered == 1) {
-        this.setState({hovered: 5});
+    if (selected == 'HOME') {
+      if(hovered == 5) {
+        this.setState({hovered: 1});
       } else {
-        this.setState({hovered: hovered - 1});
+        this.setState({hovered: hovered + 1});
       }
     }
   }
 
   protocolBack() {
     const {selected, hovered} = this.state;
-    if (selected != 'HOME') {
+    if (selected == 'HOME') {
       if(hovered == 1) {
         this.setState({hovered: 5});
       } else {
         this.setState({hovered: hovered - 1});
       }
     } else {
-      this.setState({selected: 'HOME', hovered: 0})
+      this.setState({selected: 'HOME', hovered: 1})
     }
   }
 
