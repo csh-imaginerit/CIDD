@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
 import {
-  Home, Information
+  Home, Information, System, Entertainment, Components, CSH
 } from './pages';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      stack: ['HOME']
+      selected: 'HOME',
+      hovered: 0
     };
 
     this.handleOnMessage = this.handleOnMessage.bind(this);
@@ -38,29 +39,51 @@ class App extends Component {
   }
 
   protocolChange(screen, tokens) {
-    const {stack, update} = this.state;
-    if(screen !== stack[stack.length - 1]) {
-      stack.push(screen);
-      console.warn(stack);
-      this.setState({update: update + 1});
+    this.setState({selected: screen});
+  }
+
+  protocolSelect() {
+
+  }
+
+  protocolNext() {
+    const {selected, hovered} = this.state;
+    if (selected != 'HOME') {
+      if(hovered == 1) {
+        this.setState({hovered: 5});
+      } else {
+        this.setState({hovered: hovered - 1});
+      }
     }
   }
 
   protocolBack() {
-    const {stack, update} = this.state;
-    if(stack.length > 1) {
-      stack.pop();
-      console.warn(stack);
-      this.setState({update: update + 1});
+    const {selected, hovered} = this.state;
+    if (selected != 'HOME') {
+      if(hovered == 1) {
+        this.setState({hovered: 5});
+      } else {
+        this.setState({hovered: hovered - 1});
+      }
+    } else {
+      this.setState({selected: 'HOME', hovered: 0})
     }
   }
 
   render() {
-    const {stack} = this.state;
+    const {selected} = this.state;
     console.warn(this.state);
-    switch (stack[stack.length - 1]) {
-      case 'INFORMATION':
+    switch (selected) {
+      case 'ABOUT':
         return <Information />
+      case 'SYSTEM':
+        return <System />
+      case 'COMPONENTS':
+        return <Components />
+      case 'CSH':
+        return <CSH />
+      case 'ENTERTAINMENT':
+        return <Entertainment />
       case 'HOME':
       default:
         return <Home protocolChange={this.protocolChange}/>
