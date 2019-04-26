@@ -15,8 +15,8 @@ class App extends Component {
     };
 
     this.handleOnMessage = this.handleOnMessage.bind(this);
-
-    this.connection = new WebSocket('ws://127.0.0.1:5000');
+    console.warn(window);
+    this.connection = new WebSocket(window.location.hostname === 'localhost' ? 'ws://127.0.0.1:8080' : 'ws://castr-castr.cs.house');
     this.connection.onmessage = this.handleOnMessage;
     this.connection.onopen = this.handleOnOpen;
   }
@@ -41,6 +41,10 @@ class App extends Component {
           break;
         case 'SELECT':
           this.protocolSelect();
+          break;
+        case 'VOICE':
+          console.warn(message.data);
+          break;
         default:
       }
   }
