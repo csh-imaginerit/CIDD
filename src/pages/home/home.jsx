@@ -37,11 +37,6 @@ class Home extends Component {
         id: 4,
         img: Tools
       }
-      // {
-      //   name: 'Computer Science House',
-      //   id: 5,
-      //   width: '30%'
-      // }
     ];
     const {hovered} = this.props;
   

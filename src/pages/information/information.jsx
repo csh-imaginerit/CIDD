@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import About from '../../assets/about.jpg';
+
 class Information extends Component {
   constructor(props) {
     super(props);
@@ -8,7 +10,7 @@ class Information extends Component {
   }
 
   render() {
-    return <div>Information</div>
+    return <img src={About} style={{width: '100vw', height: '100vh'}}/>
   }
 }
 
