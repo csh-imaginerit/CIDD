@@ -20,12 +20,12 @@ export const OptionBox = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  width: 25vw;
-  height: 25vw;
-  margin: 20px 6vw;
+  width: 25vh;
+  height: 25vh;
+  margin: 20px 6vh;
   border-radius: 10px;
 
-  background-color: ${props => props.hovered ? "red" : "white"};
+  background-color: ${props => props.hovered ? "#b0197E" : "white"};
 `;
 
 export const OptionsContainer = styled.div`
@@ -38,7 +38,7 @@ export const OptionsContainer = styled.div`
 export const OptionLabel = styled.p`
   text-align: center;
   font-size: 22px;
-  color: ${props => props.hovered ? "red" : "white"};
+  color: ${props => props.hovered ? "#b0197E" : "white"};
 `;
 
 export const FlexCol = styled.div`
