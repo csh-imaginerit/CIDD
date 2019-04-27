@@ -63,8 +63,6 @@ export const Select = styled.select`
   margin-right: 10px;
 `;
 
-import styled from 'styled-components';
-
 export const Header = styled.h1`
 
 `;

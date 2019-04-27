@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
 import Speed from '../../assets/speed.gif';
+import { Container } from '../baseComponents';
+
 
 class System extends Component {
     constructor(props) {
@@ -8,7 +10,11 @@ class System extends Component {
     }
 
     render() {
-        return <div>system<img src={Speed}/></div>
+        return (
+            <Container>
+                
+            </Container>
+        );    
     }
 }
 

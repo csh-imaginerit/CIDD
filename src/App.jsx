@@ -16,7 +16,7 @@ class App extends Component {
 
     this.handleOnMessage = this.handleOnMessage.bind(this);
     console.warn(window);
-    this.connection = new WebSocket(window.location.hostname === 'localhost' ? 'ws://127.0.0.1:8080' : 'ws://castr-castr.cs.house');
+    this.connection = new WebSocket(window.location.hostname === 'localhost' ? 'ws://127.0.0.1:8080' : 'wss://castr-castr.cs.house');
     this.connection.onmessage = this.handleOnMessage;
     this.connection.onopen = this.handleOnOpen;
   }
