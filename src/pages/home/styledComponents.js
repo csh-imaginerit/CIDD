@@ -7,6 +7,7 @@ export const Header = styled.h1`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -15,38 +16,33 @@ export const Instructions = styled.h3`
 `;
 
 export const OptionBox = styled.div`
-  padding: 20px;
-  border: 1px solid black;
-  height: 200px;
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 25vw;
+  height: 25vw;
+  margin: 20px 6vw;
   border-radius: 10px;
-  a {
-    color: grey;
-    font-size: 22px;
-    text-decoration: none;
-  }
 
   background-color: ${props => props.hovered ? "red" : "white"};
-
-  &:before {
-    content: "${props => props.content}";
-    color: black;
-    left: 10px;
-    top: 10px;
-    position: relative;
-  }
-
-  :hover {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
-  }
 `;
 
 export const OptionsContainer = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 100vw;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  `;
+
+export const OptionLabel = styled.p`
+  text-align: center;
+  font-size: 22px;
+  color: ${props => props.hovered ? "red" : "white"};
+`;
+
+export const FlexCol = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

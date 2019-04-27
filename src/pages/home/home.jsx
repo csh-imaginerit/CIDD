@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 
-import { Container, Header, OptionsContainer, OptionBox, Instructions } from './styledComponents';
+import { Container, Header, OptionsContainer, OptionBox, Instructions, OptionLabel } from './styledComponents';
+import Headset from '../../assets/headset.svg';
+import Stopclock from '../../assets/stopclock.svg';
+import Tools from '../../assets/tools.svg';
+import Help from '../../assets/help.svg';
+
 
 class Home extends Component {
   constructor(props) {
@@ -15,35 +20,38 @@ class Home extends Component {
       {
         name: 'About',
         id: 1,
-        width: '30%'
+        img: Help
       },
       {
         name: 'System',
         id: 2,
-        width: '50%'
+        img: Stopclock
       },
       {
         name: 'Entertainment',
         id: 3,
-        width: '80%'
+        img: Headset
       },
       {
         name: 'Components',
         id: 4,
-        width: '50%'
-      },
-      {
-        name: 'Computer Science House',
-        id: 5,
-        width: '30%'
+        img: Tools
       }
+      // {
+      //   name: 'Computer Science House',
+      //   id: 5,
+      //   width: '30%'
+      // }
     ];
     const {hovered} = this.props;
   
     return options.map((item, index) =>
-      <OptionBox key={index} content={item.id} hovered={item.id === hovered} style={{width: item.width}}>
-        <a>{item.name}</a>
-      </OptionBox>
+      <div>
+        <OptionBox key={index} hovered={item.id === hovered}>
+          <img src={item.img}></img>
+        </OptionBox>
+        <OptionLabel hovered={item.id === hovered}>{item.name}</OptionLabel>
+      </div>
     );
   }
 
