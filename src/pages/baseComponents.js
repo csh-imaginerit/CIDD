@@ -109,3 +109,24 @@ export const FlexCol = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const BigImg = styled.img`
+  height: 50vh
+`;
+
+export const SmImg = styled.img`
+  height: 30vh;
+  width: auto;
+  margin: 8px;
+`;
+
+export const WhiteDiv = styled.div`
+  background-color: white;
+  height: 800px;
+`;
+
+export const Logo = styled.img`
+  height: auto;
+  width: 100%;
+  margin: 8px;
+`;
