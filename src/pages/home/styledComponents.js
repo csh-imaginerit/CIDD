@@ -33,6 +33,7 @@ export const OptionsContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
+  height: 100vh;
   `;
 
 export const OptionLabel = styled.p`

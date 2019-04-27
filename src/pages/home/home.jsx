@@ -53,9 +53,6 @@ class Home extends Component {
   render() {
     return (
       <Container>
-        <Header>
-          Computerized Autonomous Roadster
-        </Header>
         <OptionsContainer>
           {this.renderOptions()}
         </OptionsContainer>
