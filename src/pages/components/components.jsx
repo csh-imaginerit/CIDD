@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Container, ColumnFlex, Logo, RowFlex, OptionBox, OptionLabel, SmImg, BigImg } from '../baseComponents';
-import Speed from '../../assets/speed.gif';
-import Headset from '../../assets/headset.svg';
-import Battery from '../../assets/battery.svg';
+import Dir from '../../assets/dir.png';
+import CV from '../../assets/cv.jpg';
+import Hand from '../../assets/hand.png';
 
 
 class Components extends Component {
@@ -16,19 +16,19 @@ class Components extends Component {
             <RowFlex>
                 <div>
                     <OptionBox style={{marginTop: '250px', padding: '10px'}}>
-                        <Logo src={Battery} />
+                        <Logo src={Dir} />
                     </OptionBox>
                     <OptionLabel>Directional AC</OptionLabel>
                 </div>
                 <RowFlex>
                     <ColumnFlex>    
-                        <Logo src={Speed} />
+                        <Logo src={CV} />
                         <OptionLabel>Computer's Vision</OptionLabel>
                     </ColumnFlex>
                 </RowFlex>
                 <div>
                     <OptionBox style={{marginTop: '250px', padding: '10px'}}>
-                        <Logo src={Headset} />
+                        <Logo src={Hand} />
                     </OptionBox>
                     <OptionLabel>Gesture Detection</OptionLabel>
                 </div>

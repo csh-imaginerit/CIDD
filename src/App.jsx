@@ -4,7 +4,7 @@ import {
   Home, Information, System, Entertainment, Components, CSH
 } from './pages';
 
-const screens = ['HOME', 'HOME', 'SYSTEM', 'ENTERTAINMENT', 'COMPONENTS', 'CSH']
+const screens = ['HOME', 'ABOUT', 'SYSTEM', 'ENTERTAINMENT', 'COMPONENTS']
 
 class App extends Component {
   constructor(props) {
@@ -63,7 +63,7 @@ class App extends Component {
   protocolNext() {
     const {selected, hovered} = this.state;
     if (selected == 'HOME') {
-      if(hovered == 5) {
+      if(hovered == 4) {
         this.setState({hovered: 1});
       } else {
         this.setState({hovered: hovered + 1});
@@ -75,7 +75,7 @@ class App extends Component {
     const {selected, hovered} = this.state;
     if (selected == 'HOME') {
       if(hovered == 1) {
-        this.setState({hovered: 5});
+        this.setState({hovered: 4});
       } else {
         this.setState({hovered: hovered - 1});
       }
